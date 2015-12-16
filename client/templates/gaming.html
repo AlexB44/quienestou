@@ -1,0 +1,21 @@
+<template name="gaming">
+  <h1>Game</h1>
+  {{ #with game }}
+    <p>{{ this.creator }} VS {{ this.guy }}</p>
+    {{ #if checkCreator }}
+      {{ #each this.poolcreator }}
+        <img src="/{{ this }}.jpg" alt="">
+      {{ /each }}
+      {{ #each this.crossedcreator }}
+        <img src="/{{ this }}.jpg" alt="">
+      {{ /each }}
+      {{ else }}
+        {{ #each this.poolguy }}
+          <img src="/{{ this }}.jpg" alt="">
+        {{ /each }}
+        {{ #each this.crossedguy }}
+          <img src="/{{ this }}.jpg" alt="">
+        {{ /each }}
+    {{ /if }}
+  {{ /with }}
+</template>

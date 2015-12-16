@@ -1,0 +1,49 @@
+On se connecte à l'application.
+
+Il y a diverses parties ouvertes. On peut s'inscrire à une ou en créer une.
+On peut aussi voir son profil et le leaderboard.
+
+Quand on entre dans une partie:
+  Tous les visages s'affichent. Un est choisi au hasard pour nous. Il y a aussi un tchat.
+  Le premier joueur (tiré au hasard) pose une question. L'autre répond. Le premier click
+    sur les visages qu'il veut cacher. Quand il a fini il passe la main.
+  A tout moment chaque joueur peut cliquer sur le bouton "j'ai trouvé" pour selectionner
+    le visage qu'il pense être le bon. C'est automatique s'il n'en reste qu'un.
+  Celui qui gagne gagne un point. L'autre est nul.
+  Retour sur la page principale.
+
+
+DB:
+
+Users : ajouter le champ points
+
+Games :
+  _creator: user id
+  _guy: user id
+  _poolcreator: ["name"]
+  _poolguy: ["name"]
+  _answercreator: "name"
+  _answerguy: "name"
+  _crossedcreator: ["name"]
+  _crossedguy: ["name"]
+  _winner: user id
+  _turn: user id
+  _messages: [object]
+
+Methods:
+
+  User:
+    _créer un user
+    _un user peut s'éditer
+    _un user peut supprimer son compte
+    _un user peut créer une partie
+    _un user peut s'inscrire à une partie
+    _un user peut supprimer une partie qu'il a créé
+    _un user peut envoyer un message
+
+  Games:
+    _quand une game est créée les champs answer sont remplis aléatoirement
+      à partir du champ pool
+    _quand un user dont c'est le tour click sur une tronche, la pool se vide
+      et le champ crossed se rempli
+    _le champ turn change en fonction du joueur actuel
