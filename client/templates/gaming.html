@@ -2,20 +2,35 @@
   <h1>Game</h1>
   {{ #with game }}
     <p>{{ this.creator }} VS {{ this.guy }}</p>
-    {{ #if checkCreator }}
-      {{ #each this.poolcreator }}
-        <img src="/{{ this }}.jpg" alt="">
-      {{ /each }}
-      {{ #each this.crossedcreator }}
-        <img src="/{{ this }}.jpg" alt="">
-      {{ /each }}
-      {{ else }}
-        {{ #each this.poolguy }}
-          <img src="/{{ this }}.jpg" alt="">
-        {{ /each }}
-        {{ #each this.crossedguy }}
-          <img src="/{{ this }}.jpg" alt="">
-        {{ /each }}
+    {{ #if this.winner }}
+    <h1>WINNER : {{ this.winner }}</h1>
     {{ /if }}
+    <h3>Tour actuel : {{ this.turn }} <button class="turn">Passer la main</button></h3>
+    {{ #if checkCreator }}
+    <img src="/{{ this.answercreator }}.jpg">
+    <div class="unchecked">
+      {{ #each this.poolcreator }}
+        <img src="/{{ this }}.jpg">
+      {{ /each }}
+    </div>
+      {{ else }}
+      <img src="/{{ this.answerguy }}.jpg">
+      <div class="unchecked">
+        {{ #each this.poolguy }}
+          <img src="/{{ this }}.jpg">
+        {{ /each }}
+      </div>
+    {{ /if }}
+    <div class="tchat">
+      <div class="conv">
+        {{ #each messages }}
+          <p>{{ this.creator }} : {{ this.text }}</p>
+        {{ /each }}
+      </div>
+      <form action="">
+        <input type="text">
+        <button>Envoyer</button>
+      </form>
+    </div>
   {{ /with }}
 </template>
