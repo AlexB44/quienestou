@@ -1,21 +1,24 @@
 <template name="gaming">
-  <div class="tchat">
-    <div class="conv">
-      {{ #each messages }}
-        <p>{{ this.creator }} : {{ this.text }}</p>
-      {{ /each }}
-    </div>
-    <form action="">
-      <input type="text" required>
-      <button>Envoyer</button>
-    </form>
-    <button class="turn">Passer la main</button>
-  </div>
-  <h1>Game</h1>
   {{ #with game }}
+  <div class="utilities">
+    <div class="tchat">
+      <div class="conv">
+        {{ #each messages }}
+          <p>{{ this.creator }} : {{ this.text }}</p>
+        {{ /each }}
+      </div>
+      <form action="">
+        <input type="text" required>
+        <button>Envoyer</button>
+      </form>
+      <button class="turn">Passer la main</button>
+    </div>
+    <h1>Game</h1>
     <p>{{ this.creator }} VS {{ this.guy }}</p>
     <h1 class="winner">WINNER : {{ #if this.winner }}{{ this.winner }}{{ else }} ??? {{ /if }}</h1>
     <h3>Tour actuel : {{ this.turn }}</h3>
+  </div> <!-- utilities -->
+  <div class="photos">
     {{ #if checkCreator }}
     <img src="/{{ this.answercreator }}.jpg">
     <div class="unchecked">
@@ -23,13 +26,14 @@
         <img src="/{{ this }}.jpg">
       {{ /each }}
     </div>
-      {{ else }}
-      <img src="/{{ this.answerguy }}.jpg">
-      <div class="unchecked">
-        {{ #each this.poolguy }}
-          <img src="/{{ this }}.jpg">
-        {{ /each }}
-      </div>
+    {{ else }}
+    <img src="/{{ this.answerguy }}.jpg">
+    <div class="unchecked">
+      {{ #each this.poolguy }}
+        <img src="/{{ this }}.jpg">
+      {{ /each }}
+    </div>
     {{ /if }}
+  </div> <!-- photos -->
   {{ /with }}
 </template>

@@ -10,3 +10,13 @@
   border-radius: 20px;
   float: right;
 }
+
+.photos {
+  width: 60%;
+}
+
+.utilities {
+  float: right;
+  position: fixed;
+  right: 0;
+}
