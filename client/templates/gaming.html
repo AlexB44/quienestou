@@ -1,13 +1,32 @@
 <template name="gaming">
-  <h1>Game</h1>
+  <div class="nav">
+    <h1>Game</h1>
+  </div>
+  
   {{ #with game }}
-    <p>{{ this.creator }} VS {{ this.guy }}</p>
-    {{ #if this.winner }}
-    <h1>WINNER : {{ this.winner }}</h1>
-    {{ /if }}
-    <h3>Tour actuel : {{ this.turn }} <button class="turn">Passer la main</button></h3>
-    {{ #if checkCreator }}
-    <img src="/{{ this.answercreator }}.jpg">
+    
+    <div class="pop">
+      <p>{{ this.creator }} VS {{ this.guy }}</p>
+      {{ #if this.winner }}
+      <h1>WINNER : {{ this.winner }}</h1>
+      {{ /if }}
+      <div class="tchat">
+        <div class="conv">
+          {{ #each messages }}
+            <p>{{ this.creator }} : {{ this.text }}</p>
+          {{ /each }}
+        </div>
+        <form action="">
+          <input type="text">
+          <button>Envoyer</button>
+        </form>
+      </div>
+    </div>
+    
+      <h3>Tour actuel : {{ this.turn }} <button class="turn">Passer la main</button></h3>
+      {{ #if checkCreator }}
+      <img src="/{{ this.answercreator }}.jpg">
+    
     <div class="unchecked">
       {{ #each this.poolcreator }}
         <img src="/{{ this }}.jpg">
@@ -21,16 +40,5 @@
         {{ /each }}
       </div>
     {{ /if }}
-    <div class="tchat">
-      <div class="conv">
-        {{ #each messages }}
-          <p>{{ this.creator }} : {{ this.text }}</p>
-        {{ /each }}
-      </div>
-      <form action="">
-        <input type="text">
-        <button>Envoyer</button>
-      </form>
-    </div>
   {{ /with }}
 </template>

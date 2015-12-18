@@ -3,9 +3,17 @@
   overflow-y: scroll;
 }
 
+/*.pop {
+  width:100%;
+  height:100px;
+  padding-top:-90px;
+  border-bottom:solid 2px #b7b7b7;
+}*/
+
 .tchat {
   width: 250px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 20px;
+  float:right;
 }
