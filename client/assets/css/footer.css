@@ -3,8 +3,9 @@ footer {
   bottom: 0;
   width: 100vw;
   height: 20px;
-  background: red;
   padding: 5px;
+  border-top: 1px solid black;
+  background: #fff;
 }
 
 .footerSpace {

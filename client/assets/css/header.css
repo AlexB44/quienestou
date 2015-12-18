@@ -1,9 +1,10 @@
 header {
-  background: yellow;
   position: fixed;
   top: 0;
   width: 100vw;
   padding: 20px;
+  border-bottom: 1px solid black;
+  background: #fff;
 }
 
 .headerSpace {
