@@ -1,7 +1,6 @@
 Template.gaming.helpers({
   game: function() {
     var game = Games.findOne({_id: Router.current().params.id});
-    console.log(game);
     Session.set("currentGame", game);
     return game;
   },
@@ -64,7 +63,6 @@ Template.gaming.events({
     var data = {};
     data.text = $("form input")[0].value;
     data.creator = Meteor.user().username;
-    console.log(data);
     Games.update({_id: Router.current().params.id}, {$push: {messages: data}});
     $("form input")[0].value = "";
   },
@@ -78,4 +76,21 @@ Template.gaming.events({
       Games.update({_id: Router.current().params.id}, {$set: {turn: game.creator}});
     }
   }
+})
+
+Template.gaming.onRendered(function() {
+  var target = document.querySelector('.winner');
+  console.log(target)
+
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      alert("l'autre a gagné !")
+    })
+  })
+
+  // configuration of the observer:
+  var config = { attributes: true, childList: true, characterData: true };
+ 
+  // pass in the target node, as well as the observer options
+  observer.observe(target, config);
 })

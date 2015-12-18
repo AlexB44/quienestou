@@ -1,4 +1,9 @@
 <template name="game">
-  <h3>{{ creator }}</h3>
+  <h3>Partie de {{ creator }}</h3>
+  {{ #if checkFull }}
+    <p>PLEINE</p>
+    {{ else }}
+    <p>Une place disponible</p>
+  {{ /if }}
   <button>Rejoindre</button>
 </template>

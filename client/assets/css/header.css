@@ -1,0 +1,16 @@
+header {
+  background: yellow;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 20px;
+}
+
+.headerSpace {
+  height: 80px;
+}
+
+#login-buttons {
+  float: right;
+  margin-right: 40px;
+}
