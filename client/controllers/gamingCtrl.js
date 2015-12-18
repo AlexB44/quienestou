@@ -60,6 +60,7 @@ Template.gaming.events({
   },
   "submit form": function(event) {
     event.preventDefault();
+    if (!$("form input")[0].value) return;
     var data = {};
     data.text = $("form input")[0].value;
     data.creator = Meteor.user().username;

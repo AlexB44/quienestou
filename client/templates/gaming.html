@@ -6,15 +6,16 @@
       {{ /each }}
     </div>
     <form action="">
-      <input type="text">
+      <input type="text" required>
       <button>Envoyer</button>
     </form>
+    <button class="turn">Passer la main</button>
   </div>
   <h1>Game</h1>
   {{ #with game }}
     <p>{{ this.creator }} VS {{ this.guy }}</p>
-    <h1 class="winner">WINNER : {{ this.winner }}</h1>
-    <h3>Tour actuel : {{ this.turn }} <button class="turn">Passer la main</button></h3>
+    <h1 class="winner">WINNER : {{ #if this.winner }}{{ this.winner }}{{ else }} ??? {{ /if }}</h1>
+    <h3>Tour actuel : {{ this.turn }}</h3>
     {{ #if checkCreator }}
     <img src="/{{ this.answercreator }}.jpg">
     <div class="unchecked">
