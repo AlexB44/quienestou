@@ -1,4 +1,15 @@
 <template name="gaming">
+  <div class="tchat">
+    <div class="conv">
+      {{ #each messages }}
+        <p>{{ this.creator }} : {{ this.text }}</p>
+      {{ /each }}
+    </div>
+    <form action="">
+      <input type="text">
+      <button>Envoyer</button>
+    </form>
+  </div>
   <h1>Game</h1>
   {{ #with game }}
     <p>{{ this.creator }} VS {{ this.guy }}</p>
@@ -19,16 +30,5 @@
         {{ /each }}
       </div>
     {{ /if }}
-    <div class="tchat">
-      <div class="conv">
-        {{ #each messages }}
-          <p>{{ this.creator }} : {{ this.text }}</p>
-        {{ /each }}
-      </div>
-      <form action="">
-        <input type="text">
-        <button>Envoyer</button>
-      </form>
-    </div>
   {{ /with }}
 </template>
