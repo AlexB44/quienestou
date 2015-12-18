@@ -12,11 +12,12 @@
 }
 
 .photos {
-  width: 60%;
+  width: 60vw;
+  margin-right: 40px;
 }
 
 .utilities {
   float: right;
   position: fixed;
-  right: 0;
+  right: 30px;
 }

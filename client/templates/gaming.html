@@ -13,14 +13,14 @@
       </form>
       <button class="turn">Passer la main</button>
     </div>
-    <h1>Game</h1>
-    <p>{{ this.creator }} VS {{ this.guy }}</p>
     <h1 class="winner">WINNER : {{ #if this.winner }}{{ this.winner }}{{ else }} ??? {{ /if }}</h1>
     <h3>Tour actuel : {{ this.turn }}</h3>
+    {{ #if checkCreator }}
+    <img src="/{{ this.answercreator }}.jpg">
+    {{ /if }}
   </div> <!-- utilities -->
   <div class="photos">
     {{ #if checkCreator }}
-    <img src="/{{ this.answercreator }}.jpg">
     <div class="unchecked">
       {{ #each this.poolcreator }}
         <img src="/{{ this }}.jpg">
