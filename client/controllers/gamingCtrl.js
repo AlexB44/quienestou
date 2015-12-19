@@ -11,6 +11,9 @@ Template.gaming.helpers({
   },
   checkCreator: function() {
     return Meteor.user().username == this.creator;
+  },
+  checkWaiting: function() {
+    return !Session.get("currentGame").guy;
   }
 })
 
