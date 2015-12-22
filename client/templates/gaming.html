@@ -1,6 +1,7 @@
 <template name="gaming">
   {{ #with game }}
   <div class="utilities">
+
     <div class="tchat">
       <div class="conv">
         {{ #each messages }}
@@ -8,17 +9,24 @@
         {{ /each }}
       </div>
       <form action="">
-        <input type="text" required>
+        <input type="text" class="inpoute" required>
         <button>Envoyer</button>
       </form>
       <button class="turn">Passer la main</button>
     </div>
-    <h1 class="winner">WINNER : {{ #if this.winner }}{{ this.winner }}{{ else }} ??? {{ /if }}</h1>
-    <h3>Tour actuel : {{ this.turn }} {{ #if checkWaiting }} en attente d'un joueur {{ /if }}</h3>
-    {{ #if checkCreator }}
-    <img src="/{{ this.answercreator }}.jpg">
+
+    <div class="avatar">
+      <h1 class="winner">WINNER : {{ #if this.winner }}{{ this.winner }}{{ else }} ??? {{ /if }}</h1>
+      <h3>Tour actuel : {{ this.turn }} {{ #if checkWaiting }} en attente d'un joueur {{ /if }}</h3>
+      {{ #if checkCreator }}
+      <img src="/{{ this.answercreator }}.jpg">
+    
+
     {{ /if }}
+
+    </div>
   </div> <!-- utilities -->
+
   <div class="photos">
     {{ #if checkCreator }}
     <div class="unchecked">

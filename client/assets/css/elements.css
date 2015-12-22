@@ -1,10 +1,11 @@
 button {
-  padding: 5px 15px;
+  /*padding: 5px 15px; C'est une obsession les gros boutons?*/
   font-size: 20px;
   background-color: #fff;
-  border: 2px solid black;
+  border: 2px solid #23c7ea;
   cursor: pointer;
   border-radius: 20px;
   display: block;
   margin: 0 auto;
+  margin-top:10px;
 }
